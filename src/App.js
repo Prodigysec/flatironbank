@@ -21,7 +21,7 @@ function App() {
       <SearchBar />
       <SortTransactions />
       <DeleteTransaction />
-      <TransactionList />
+      <TransactionList transactions={transactions}/>
       <TransactionForm />
     </div>
   );
