@@ -7,6 +7,9 @@ import TransactionForm from './components/TransactionForm';
 
 function App() {
   const [transactions, setTransactions] = useState([]);
+  const [filteredTransactions, setFilteredTransactions] = useState([]);
+  const [isFetching, setIsFetching] = useState(true);
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
     fetch(`http://localhost:3000/transactions`)
