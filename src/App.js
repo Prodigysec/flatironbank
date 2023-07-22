@@ -25,7 +25,7 @@ function App() {
 
   return (
     <div className="App">
-      <SearchBar />
+      <SearchBar onSearch={handleSearch} />
       <SortTransactions />
       <DeleteTransaction />
       <TransactionList transactions={transactions} />
