@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 
-function SearchBar({ onSearch }) {
+function SearchBar({ onSearch, onSearchTermChange  }) {
     const [searchTerm, setSearchTerm] = useState('');
 
     const handleInputChange = (event) => {
-        setSearchTerm(event.target.value);
+        const newSearchTerm = event.target.value;
+        setSearchTerm(newSearchTerm);
+        onSearchTermChange(newSearchTerm);
     };
 
     const handleSearch = () => {
-        onSearch(searchTerm);
+        searchTerm.trim === '' ? onSearch(null) : onSearch(searchTerm)
     };
     return (
         <div>
