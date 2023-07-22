@@ -16,12 +16,19 @@ function App() {
       });
   }, []);
 
+  const handleSearch = (searchTerm) => {
+    const filteredTransactions = transactions.filter(transaction =>
+      transaction.description.includes(searchTerm)
+    );
+    setTransactions(filteredTransactions);
+  }
+
   return (
     <div className="App">
       <SearchBar />
       <SortTransactions />
       <DeleteTransaction />
-      <TransactionList transactions={transactions}/>
+      <TransactionList transactions={transactions} />
       <TransactionForm />
     </div>
   );
