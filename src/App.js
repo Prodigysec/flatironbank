@@ -16,19 +16,24 @@ function App() {
       .then((response) => response.json())
       .then((data) => {
         setTransactions(data);
+        setIsFetching(false);
       });
   }, []);
 
   const handleSearch = (searchTerm) => {
-    const filteredTransactions = transactions.filter(transaction =>
+    const filteredResults = transactions.filter(transaction =>
       transaction.description.includes(searchTerm)
     );
-    setTransactions(filteredTransactions);
+    setFilteredTransactions(filteredResults);
   }
+
+  const handleSearchTermChange = (newSearchTerm) => {
+    setSearchTerm(newSearchTerm);
+  };
 
   return (
     <div className="App">
-      <SearchBar onSearch={handleSearch} />
+      <SearchBar onSearch={handleSearch} onSearchTermChange={handleSearchTermChange} />
       <SortTransactions />
       <DeleteTransaction />
       <TransactionList transactions={transactions} />
