@@ -36,7 +36,7 @@ function App() {
       <SearchBar onSearch={handleSearch} onSearchTermChange={handleSearchTermChange} />
       <SortTransactions />
       <DeleteTransaction />
-      <TransactionList transactions={transactions} />
+      <TransactionList transactions={filteredTransactions.length === 0 && searchTerm === '' ? transactions : filteredTransactions} isFetching={isFetching} />
       <TransactionForm />
     </div>
   );
