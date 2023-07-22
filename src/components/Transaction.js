@@ -1,16 +1,22 @@
 import React from "react";
 
-function Transaction({ transactions }) {
+function Transaction({ transactions, isFetching }) {
     return (
-        transactions.map((transaction, index) => {
-            return (
-                <div className="transaction" key={index}>
-                    <p>Date: {transaction.date}</p>
-                    <p>Description: {transaction.description}</p>
-                    <p>Category: {transaction.category}</p>
-                    <p>Amount: {transaction.amount}</p>
-                </div>)
-        })
+        <>
+            {isFetching ? (<p>Loading transactions...</p>) :
+                transactions.length === 0 ? (<p>No transactions found.</p>) :
+                    (transactions.map((transaction, index) => {
+                        return (
+                            <div className="transaction" key={index}>
+                                <p>Date: {transaction.date}</p>
+                                <p>Description: {transaction.description}</p>
+                                <p>Category: {transaction.category}</p>
+                                <p>Amount: {transaction.amount}</p>
+                            </div>
+                        )
+                    }))
+            }
+        </>
 
     )
 }
