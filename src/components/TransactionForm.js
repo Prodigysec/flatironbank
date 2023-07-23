@@ -24,6 +24,25 @@ function TransactionForm({ transactions, onFormInputChange }) {
         }));
     }
 
+    function handleSubmit(event) {
+        event.preventDefault();
+
+        const lastTransactionId = transactionList.length > 0 ? transactionList[transactionList.length - 1].id : 0;
+        const newId = lastTransactionId + 1;
+        const formDataWithId = { ...formData, id: newId };
+
+        const isAnyFieldEmpty = formData.date.trim() === "" || formData.description.trim() === "" || formData.category.trim() === "" || formData.amount.trim() === "";
+        isAnyFieldEmpty ? alert("Please fill in all the fields") : onFormInputChange(formDataWithId)
+
+        setFormData({
+            id: "",
+            date: "",
+            description: "",
+            category: "",
+            amount: ""
+        });
+    }
+
     return (
         <form onSubmit={handleSubmit}>
             <input
