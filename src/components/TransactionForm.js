@@ -44,7 +44,7 @@ function TransactionForm({ transactions, onFormInputChange }) {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="TransactionForm">
             <label for="date">Date:</label>
             <input
                 type="text"
