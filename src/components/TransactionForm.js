@@ -1,6 +1,19 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-function TransactionForm() {
+function TransactionForm({ transactions, onFormInputChange }) {
+    const [formData, setFormData] = useState({
+        id: "",
+        date: "",
+        description: "",
+        category: "",
+        amount: ""
+    })
+
+    const [transactionList, setTransactionList] = useState([]);
+
+    useEffect(() => {
+        setTransactionList(transactions);
+    }, []);
     
 }
 
