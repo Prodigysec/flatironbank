@@ -41,7 +41,7 @@ function App() {
       <SortTransactions />
       <DeleteTransaction />
       <TransactionList transactions={filteredTransactions.length === 0 && searchTerm === '' ? transactions : filteredTransactions} isFetching={isFetching} />
-      <TransactionForm /*onsubmit={HandleSubmit}*/ transactions={transactions} onFormInputChange={handleFormInputChange} />
+      <TransactionForm  transactions={transactions} onFormInputChange={handleFormInputChange} />
     </div>
   );
 }
