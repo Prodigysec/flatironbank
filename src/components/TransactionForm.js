@@ -49,6 +49,7 @@ function TransactionForm({ transactions, onFormInputChange }) {
             <input
                 type="text"
                 name="date"
+                placeholder="2022-07-09"
                 value={formData.date}
                 onChange={handleFormChange}
             />
@@ -56,6 +57,7 @@ function TransactionForm({ transactions, onFormInputChange }) {
             <input
                 type="text"
                 name="description"
+                placeholder="lawyer fee"
                 value={formData.description}
                 onChange={handleFormChange}
             />
@@ -63,6 +65,7 @@ function TransactionForm({ transactions, onFormInputChange }) {
             <input
                 type="text"
                 name="category"
+                placeholder="expenses"
                 value={formData.category}
                 onChange={handleFormChange}
             />
@@ -70,6 +73,7 @@ function TransactionForm({ transactions, onFormInputChange }) {
             <input
                 type="text"
                 name="amount"
+                placeholder="31337"
                 value={formData.amount}
                 onChange={handleFormChange}
             />
