@@ -22,3 +22,27 @@ h2 {
   text-align: center;
   padding: 10px;
 }
+
+.transaction-details {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.transactions {
+  margin-top: 10px;
+}
+
+.transaction {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  width: 500px;
+  margin-right: 400px;
+}
+
+.transaction p {
+  margin: 5px 0;
+}
