@@ -14,7 +14,37 @@ function TransactionForm({ transactions, onFormInputChange }) {
     useEffect(() => {
         setTransactionList(transactions);
     }, []);
+
     
+    return (
+        <form onSubmit={handleSubmit}>
+            <input
+                type="text"
+                name="date"
+                value={formData.date}
+                onChange={handleFormChange}
+            />
+            <input
+                type="text"
+                name="description"
+                value={formData.description}
+                onChange={handleFormChange}
+            />
+            <input
+                type="text"
+                name="category"
+                value={formData.category}
+                onChange={handleFormChange}
+            />
+            <input
+                type="text"
+                name="amount"
+                value={formData.amount}
+                onChange={handleFormChange}
+            />
+            <button type="submit">Submit</button>
+        </form>
+    )
 }
 
 export default TransactionForm;
