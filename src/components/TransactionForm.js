@@ -45,24 +45,28 @@ function TransactionForm({ transactions, onFormInputChange }) {
 
     return (
         <form onSubmit={handleSubmit}>
+            <label for="date">Date:</label>
             <input
                 type="text"
                 name="date"
                 value={formData.date}
                 onChange={handleFormChange}
             />
+            <label for="description">Description:</label>
             <input
                 type="text"
                 name="description"
                 value={formData.description}
                 onChange={handleFormChange}
             />
+            <label for="category">Category:</label>
             <input
                 type="text"
                 name="category"
                 value={formData.category}
                 onChange={handleFormChange}
             />
+            <label for="amount">Amount:</label>
             <input
                 type="text"
                 name="amount"
