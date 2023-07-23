@@ -35,13 +35,23 @@ function App() {
     setTransactions([...transactions, newFormInput])
   }
 
+  const handleDeleteTransaction = (transactionId) => {
+    const updatedTransactions = transactions.filter(
+      (transaction) => transaction.id !== transactionId
+    );
+    setTransactions(updatedTransactions);
+  };
+
   return (
     <div className="App">
+      <h2>Flatiron Bank</h2>
       <SearchBar onSearch={handleSearch} onSearchTermChange={handleSearchTermChange} />
       <SortTransactions />
-      <DeleteTransaction />
-      <TransactionList transactions={filteredTransactions.length === 0 && searchTerm === '' ? transactions : filteredTransactions} isFetching={isFetching} />
-      <TransactionForm  transactions={transactions} onFormInputChange={handleFormInputChange} />
+      {/* <DeleteTransaction /> */}
+      <div className='transaction-details'>
+        <TransactionList transactions={filteredTransactions.length === 0 && searchTerm === '' ? transactions : filteredTransactions} isFetching={isFetching} onDeleteTransaction={handleDeleteTransaction} />
+        <TransactionForm transactions={transactions} onFormInputChange={handleFormInputChange} />
+      </div>
     </div>
   );
 }
