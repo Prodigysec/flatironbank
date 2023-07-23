@@ -15,7 +15,15 @@ function TransactionForm({ transactions, onFormInputChange }) {
         setTransactionList(transactions);
     }, []);
 
-    
+    function handleFormChange(event) {
+        const { name, value } = event.target;
+
+        setFormData((formData) => ({
+            ...formData,
+            [name]: value
+        }));
+    }
+
     return (
         <form onSubmit={handleSubmit}>
             <input
