@@ -31,13 +31,17 @@ function App() {
     setSearchTerm(newSearchTerm);
   };
 
+  const handleFormInputChange = (newFormInput) => {
+    setTransactions([...transactions, newFormInput])
+  }
+
   return (
     <div className="App">
       <SearchBar onSearch={handleSearch} onSearchTermChange={handleSearchTermChange} />
       <SortTransactions />
       <DeleteTransaction />
       <TransactionList transactions={filteredTransactions.length === 0 && searchTerm === '' ? transactions : filteredTransactions} isFetching={isFetching} />
-      <TransactionForm />
+      <TransactionForm /*onsubmit={HandleSubmit}*/ transactions={transactions} onFormInputChange={handleFormInputChange} />
     </div>
   );
 }
